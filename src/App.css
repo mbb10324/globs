@@ -3,37 +3,27 @@
 	padding: 0;
 }
 
+body {
+	overflow: hidden;
+}
+
 .app {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	min-height: 100vh;
-	height: 100%;
-	font-family: Arial, sans-serif;
+	width: calc(100vw);
+	height: calc(100 * var(--vh));
 	color: #fff7ee;
-	background-color: #141414;
+	background-color: #0c0c0c;
+	overflow: hidden;
+	position: relative;
 }
 
-.app video {
-	width: 40%;
-	height: auto;
-}
-
-.app h1 {
-	font-size: 20px;
-	text-align: center;
-}
-
-.app h1 a {
-	color: #d4ef21;
-}
-
-@media screen and (max-width: 768px) {
-	.app video {
-		width: 90%;
+@keyframes bounce {
+	0% {
+		transform: scale(1);
 	}
-	.app h1 {
-		font-size: 12px;
+	50% {
+		transform: scale(1.4);
+	}
+	100% {
+		transform: scale(1);
 	}
 }

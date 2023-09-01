@@ -1,15 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Arca from "./Components/Arca.js";
+import useVariableHeight from "./Utils/VariableHeight.js";
+import LavaLamp from "./Components/LavaLamp.js";
+import useMobileClicks from "./Utils/MobileClick.js";
+import Controls from "./Components/Controls.js";
+import Notice from "./Components/Notice.js";
+import { useState } from "react";
 import "./App.css";
 
 export default function App() {
+	const [theme, setTheme] = useState("default");
+	useVariableHeight();
+	useMobileClicks();
+
 	return (
 		<div className="app">
-			<Router>
-				<Routes>
-					<Route path="/" element={<Arca />} />
-				</Routes>
-			</Router>
+			<LavaLamp theme={theme} />
+			<Controls theme={theme} setTheme={setTheme} />
+			<Notice />
 		</div>
 	);
 }
