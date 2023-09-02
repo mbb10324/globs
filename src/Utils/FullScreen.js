@@ -29,17 +29,6 @@ export const useFullScreen = () => {
 	}, []);
 
 	const toggleFullScreen = () => {
-		// For Safari
-		if (navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome")) {
-			if (!document.fullscreenElement && document.documentElement.webkitRequestFullscreen) {
-				document.documentElement.webkitRequestFullscreen();
-			} else if (document.fullscreenElement && document.webkitExitFullscreen) {
-				document.webkitExitFullscreen();
-			}
-			return;
-		}
-
-		// The logic for other browsers
 		if (
 			document.fullscreenElement ||
 			document.webkitFullscreenElement ||
